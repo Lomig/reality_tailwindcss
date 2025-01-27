@@ -1,0 +1,4 @@
+(executable
+ (public_name reality_tailwindcss)
+ (name main)
+ (libraries lwt reality_tailwindcss))
