@@ -34,7 +34,7 @@ let rec download_with_redirects ~max_redirects uri target =
 ;;
 
 let download target =
-  let target = target ^ "/tailwindcss" in
+  let target = Filename.concat target "tailwindcss" in
   let version = system_to_version () in
   let base_url =
     "https://github.com/tailwindlabs/tailwindcss/releases/latest/download/"
@@ -42,3 +42,5 @@ let download target =
   let uri = Uri.of_string (base_url ^ version) in
   download_with_redirects ~max_redirects:5 uri target
 ;;
+
+let install = Installation.install

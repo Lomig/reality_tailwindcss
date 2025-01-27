@@ -1,5 +1,6 @@
 (library
  (name realityTailwind)
  (public_name reality_tailwindcss)
- (modules realityTailwind)
- (libraries extunix cohttp-lwt-unix))
+ (modules realityTailwind installation)
+ (private_modules installation)
+ (libraries containers re extunix cohttp-lwt-unix))

@@ -11,6 +11,7 @@ tags: ["tailwindcss" "tailwind" "dream" "reality"]
 depends: [
   "dune" {>= "3.17"}
   "ocaml"
+  "containers"
   "extunix"
   "cohttp-lwt-unix"
   "odoc" {with-doc}

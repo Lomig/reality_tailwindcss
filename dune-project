@@ -17,7 +17,7 @@
  (synopsis "Install and Configure TailwindCSS with Dream")
  (description
   "Download and install TailwindCSS CLI and make it available in an OCaml project; a CLI tool is provided to easily generate a TailwindCSS configuration file to serve the TailwindCSS assets.")
- (depends ocaml extunix cohttp-lwt-unix)
+ (depends ocaml containers extunix cohttp-lwt-unix)
  (tags
   ("tailwindcss" "tailwind" "dream" "reality")))
 
