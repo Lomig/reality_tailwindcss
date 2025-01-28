@@ -2,7 +2,6 @@ open Containers
 
 let dune_file_content =
   {|
-
 ;------------------------------------------------------------------------------
 ; Reality Tailwind CSS
 ;------------------------------------------------------------------------------
@@ -35,8 +34,7 @@ let dune_file_content =
       %{input}
       -o
       %{project_root}/../../static/application.css))
-    (run cp %{project_root}/../../static/application.css %{target})))))
-|}
+    (run cp %{project_root}/../../static/application.css %{target})))))|}
 ;;
 
 let print_step msg =
@@ -67,6 +65,7 @@ let ensure_directory dir =
   if not (Sys.file_exists dir)
   then (
     print_step (Printf.sprintf "Creating directory %s" dir);
+    Sys.mkdir dir 0o755;
     print_success "Directory created")
 ;;
 
