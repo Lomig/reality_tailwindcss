@@ -86,9 +86,9 @@ let check_if_dream_project project_root =
   let regexp =
     Re.seq
       [ Re.str "(depends"
-      ; Re.rep1 (Re.alt [ Re.alnum; Re.str " "; Re.str "-"; Re.str "_" ])
-      ; Re.str " dream "
-      ; Re.rep1 (Re.alt [ Re.alnum; Re.str " "; Re.str "-"; Re.str "_" ])
+      ; Re.rep (Re.alt [ Re.alnum; Re.str " "; Re.str "-"; Re.str "_" ])
+      ; Re.seq [ Re.bow; Re.str "dream"; Re.eow ]
+      ; Re.rep (Re.alt [ Re.alnum; Re.str " "; Re.str "-"; Re.str "_" ])
       ; Re.str ")"
       ]
     |> Re.compile
