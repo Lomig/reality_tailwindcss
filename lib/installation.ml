@@ -11,7 +11,7 @@ let dune_file_content =
  (action
   (progn
    (run echo "Downloading Tailwind CSS...")
-   (run reality_tailwindcss %{project_root}/bin)
+   (run reality_tailwindcss download %{project_root}/bin)
    (run chmod +x %{target})))
  (mode fallback))
 
