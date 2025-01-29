@@ -5,7 +5,7 @@ let help () =
     {|RealityTailwindCSS - TailwindCSS integration tool for OCaml/Dream projects
 
 USAGE:
-  realitytailwindcss [OPTION]
+  reality_tailwindcss [OPTION]
 
 OPTIONS:
   download [path]  Downloads the TailwindCSS CLI to the [path] directory
@@ -13,8 +13,8 @@ OPTIONS:
   help             Display this help message
 
 EXAMPLES:
-  realitytailwindcss download bin/
-  realitytailwindcss install
+  reality_tailwindcss download bin/
+  reality_tailwindcss install
 
 For more information, visit: https://github.com/Lomig/reality_tailwindcss|}
   in
