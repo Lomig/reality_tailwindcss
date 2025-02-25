@@ -3,4 +3,7 @@
  (public_name reality_tailwindcss)
  (modules realityTailwind installation)
  (private_modules installation)
- (libraries containers re extunix cohttp-lwt-unix))
+ (libraries containers re cohttp-lwt-unix)
+ (foreign_stubs
+  (language c)
+  (names system_detection)))

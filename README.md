@@ -13,10 +13,10 @@
 To use RealityTailwindCSS in your OCaml/Dream project, follow these steps:
 
 1. **Add the Dependency**:
-   Add `reality_tailwindcss` to your `dune-project` file or `opam` dependencies.
+   Add `reality_tailwindcss` to your `dune-project` file pinned dependencies or use `opam` directly.
 
    ```opam
-   opam install reality_tailwindcss
+   opam pin reality_tailwindcss.1.0.1 git+https://github.com/Lomig/reality_tailwindcss.git#main
    ```
 
 2. **Install and Set Up**:

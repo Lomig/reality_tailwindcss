@@ -1,16 +1,16 @@
 open Lwt.Syntax
 
+external detect_os : unit -> string = "caml_detect_os"
+external detect_architecture : unit -> string = "caml_detect_architecture"
+
 let system_to_version () =
-  match ExtUnix.All.uname () with
-  | { ExtUnix.All.Uname.sysname = "Darwin"; machine = "arm64"; _ } ->
-    "tailwindcss-macos-arm64"
-  | { ExtUnix.All.Uname.sysname = "Darwin"; machine = "x64"; _ } ->
-    "tailwindcss-macos-x64"
-  | { ExtUnix.All.Uname.sysname = "Linux"; machine = "x86_64"; _ } ->
-    "tailwindcss-linux-x64"
-  | { ExtUnix.All.Uname.sysname = "Linux"; machine = "aarch64"; _ } ->
-    "tailwindcss-linux-arm64"
-  | _ -> "tailwindcss-windows-x64.exe"
+  match detect_os (), detect_architecture () with
+  | "MacOS", "ARM64" -> "tailwindcss-macos-arm64"
+  | "MacOS", "x64" -> "tailwindcss-macos-x64"
+  | "Linux", "x64" -> "tailwindcss-linux-x64"
+  | "Linux", "ARM64" -> "tailwindcss-linux-arm64"
+  | "Windows", "x64" -> "tailwindcss-windows-x64.exe"
+  | _ -> "tailwindcss-linux-x64"
 ;;
 
 let rec download_with_redirects ~max_redirects uri target =

@@ -2,9 +2,12 @@
 
 (name reality_tailwindcss)
 
-(version 1.0.0)
+(version 1.0.1)
 
 (generate_opam_files true)
+
+(source
+ (github Lomig/reality_tailwindcss))
 
 (authors "Lomig <lomig@hey.com>")
 
@@ -17,7 +20,7 @@
  (synopsis "Install and Configure TailwindCSS with Dream")
  (description
   "Download and install TailwindCSS CLI and make it available in an OCaml project; a CLI tool is provided to easily generate a TailwindCSS configuration file to serve the TailwindCSS assets.")
- (depends ocaml containers extunix cohttp-lwt-unix)
+ (depends ocaml containers cohttp-lwt-unix)
  (tags
   ("tailwindcss" "tailwind" "dream" "reality")))
 
